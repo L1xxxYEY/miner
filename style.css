@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+:root {
+    --purple: #1d2039;
+    --light-purple: #242947;
+    --lighter-purple: #797e9a;
+    --green: #66a663;
+    --white: #fff;
+    --orange: #dbac36;
+}
+
+body {
+    background-color: var(--purple);
+    padding: 20px 30px;
+}
+
+.rounded {
+    background-color: var(--light-purple);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gameArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1000;
+}
+
+.gameSetting {
+    flex-basis: 500px;
+    flex-grow: 1;
+}
+
+.gameField {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    gap: 6px;
+}
+
+.field {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: var(--purple);
+    cursor: pointer;
+}
+
+.field.active {
+    background-color: var(--lighter-purple);
+}
+
+.field.flag {
+    background-image: url(./img/flag-in-hole.png);
+    background-color: var(--green);
+    background-position: center;
+    background-size: cover;
+}
+
+.gameSetting h2 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.score {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.point {
+    flex-basis: 150px;
+    background-color: var(--purple);
+    padding: 16px 20px;
+    flex-grow: 1;
+    text-align: center;
+    border-radius: 28px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.point.active {
+    background-color: var(--orange);
+}
+
+#gameBtn {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--green);
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+}
