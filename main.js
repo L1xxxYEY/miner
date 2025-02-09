@@ -1,8 +1,10 @@
 let USERNAME;
 let POINT;
+let game_id;
 
 //Эллементы
 let points = document.getElementsByClassName("point");
+const gameBtn = document.querySelector("#gameBtn");
 
 // Слушатели событий
 document
@@ -12,6 +14,7 @@ document
     auth();
   });
 [...points].forEach((elem) => elem.addEventListener("click", addPoint));
+gameBtn.addEventListener("click", startOrStopGame);
 
 // Функция для регистрации и для логина
 async function auth() {
@@ -27,22 +30,86 @@ async function auth() {
       alert("Мы вас зарегистрировали");
       loginWrapper.style.display = "none";
       USERNAME = response.username;
+      updateUSerBalance();
     }
   } else {
     USERNAME = response.username;
     loginWrapper.style.display = "none";
+    updateUSerBalance();
   }
 }
 
 // Функция для выбора баллов
 function addPoint(event) {
   let target = event.target.innerHTML;
-  console.log(+target);
+  POINT = +target;
   let activePoints = document.querySelector(".point.active");
   if (activePoints) {
     activePoints.classList.remove("active");
   }
   event.target.classList.add("active");
+}
+
+// Функция для обновления баланса пользователя
+async function updateUSerBalance() {
+  let response = await sendRequest("user", "GET", {
+    username: USERNAME,
+  });
+
+  if (response.error) {
+    //Если есть ошибка
+    alert(response.message);
+  } else {
+    const user = document.querySelector("header span");
+    user.innerHTML = `Пользователь ${response.username} с балансом ${response.balance}`;
+  }
+}
+
+// Функция для кнопки начала игры
+function startOrStopGame() {
+  if (gameBtn.innerHTML === "ИГРАТЬ") {
+    gameBtn.innerHTML = "ЗАВЕРШИТЬ ИГРУ";
+    gameBtn.style.backgroundColor = "red";
+    startGame();
+  } else {
+    gameBtn.innerHTML = "ИГРАТЬ";
+    gameBtn.style.backgroundColor = "#66a663";
+  }
+}
+
+// Функция для старта игры
+async function startGame() {
+  const payload = {
+    username: USERNAME,
+    points: POINT,
+  };
+  let response = await sendRequest("new_game", "POST", payload);
+  if (response.error) {
+    gameBtn.innerHTML = "ИГРАТЬ";
+    gameBtn.style.backgroundColor = "#66a663";
+  } else {
+    updateUSerBalance();
+    game_id = response.game_id;
+    activateArea();
+  }
+}
+
+//Функция для активации игрового поля
+function activateArea() {
+  let field = document.getElementsByClassName("field");
+  for (let i = 0; i < field.length; i++) {
+    field[i].addEventListener("contextmenu", setFlag);
+    setTimeout(() => {
+      field[i].classList.add("active");
+    }, i * 30);
+  }
+}
+
+//Функция для добавления иконки флажка
+function setFlag(event) {
+  event.preventDefault();
+  let target = event.target;
+  target.classList.toggle("flag");
 }
 
 async function sendRequest(url, method, data) {
