@@ -17,7 +17,7 @@
 
 body {
     background-color: var(--purple);
-    padding: 20px 30px;
+    padding: calc(0.9vw + 6.7px) calc(1.4vw + 10px);
 }
 
 #loginWrapper {
@@ -33,21 +33,21 @@ body {
 }
 
 #loginWrapper form {
-    width: 320px;
+    width: calc(11.1vw + 160px);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: calc(0.4vw + 4.7px);
     align-items: center;
 }
 
 #loginWrapper form h3 {
-    font-size: 30px;
+    font-size: calc(1.1vw + 14px);
 }
 
 #loginWrapper form input {
     width: 100%;
-    padding: 10px;
-    font-size: 24px;
+    padding: calc(0.4vw + 4.7px);
+    font-size: calc(0.8vw + 12px);
     outline: none;
     border-radius: 4px;
     background-color: var(--light-purple);
@@ -55,31 +55,35 @@ body {
 
 .rounded {
     background-color: var(--light-purple);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 20px;
+    border-radius: calc(0.9vw + 6.7px);
+    padding: calc(1.4vw + 10px);
+    margin-bottom: calc(0.9vw + 6.7px);
 }
 
 header {
     display: flex;
     align-items: center;
-    gap: 0 20px;
+    gap: 0 calc(0.9vw + 6.7px);
 }
 
 h1 {
-    font-weight: 700;
-    font-size: 36px;
+    font-weight: bold;
+    font-size: calc(1.7vw + 12px);
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: calc(2.8vw + 40px);
+    height: calc(2.8vw + 40px);
+}
+
+.rounded span {
+    font-size: calc(0.7vw + 5.3px);
 }
 
 .main {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: calc(0.9vw + 6.7px);
 }
 
 .gameArea {
@@ -90,22 +94,26 @@ h1 {
 }
 
 .gameSetting {
-    flex-basis: 500px;
+    flex-basis: calc(23.1vw + 166.7px);
     flex-grow: 1;
 }
 
 .gameField {
     display: grid;
     grid-template-columns: repeat(10,1fr);
-    gap: 6px;
+    gap: calc(0.2vw + 3.3px);
 }
 
 .field {
-    width: 30px;
-    height: 30px;
+    width: calc(0.4vw + 24.7px);
+    height: calc(0.4vw + 24.7px);
     border-radius: 4px;
     background-color: var(--purple);
     cursor: pointer;
+    font-size: calc(1.1vw + 8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .field.active {
@@ -120,27 +128,27 @@ h1 {
 }
 
 .gameSetting h2 {
-    font-size: 26px;
+    font-size: calc(1.1vw + 10px);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: calc(1.4vw + 10px);
 }
 
 .score {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    gap: calc(0.3vw + 6px) calc(0.9vw + 6.7px);
     margin-bottom: 20px;
 }
 
 .point {
-    flex-basis: 150px;
+    flex-basis: calc(4.6vw + 83.3px);
     background-color: var(--purple);
-    padding: 16px 20px;
+    padding: calc(0.7vw + 5.3px) calc(0.9vw + 6.7px);
     flex-grow: 1;
     text-align: center;
-    border-radius: 28px;
+    border-radius: calc(1.3vw + 9.3px);
     cursor: pointer;
-    font-size: 24px;
+    font-size: calc(0.7vw + 13.3px);
 }
 
 .point.active {
@@ -149,10 +157,19 @@ h1 {
 
 #gameBtn {
     width: 100%;
-    padding: 20px;
+    padding: calc(0.9vw + 6.7px);
     background-color: var(--green);
-    border-radius: 32px;
+    border-radius: calc(1.7vw + 8px);
     border: 0;
     cursor: pointer;
-    font-size: 24px;
+    font-size: calc(0.9vw + 10.7px);
+}
+
+.field.bomb {
+    background-image: url(/img//bomb.png);
+    background-color: rgb(138, 14, 14);
+    background-position: center;
+    background-size: calc(0.6vw + 22px);
+    background-repeat: no-repeat;
+    
 }
