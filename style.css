@@ -166,7 +166,7 @@ h1 {
 }
 
 .field.bomb {
-    background-image: url(/img//bomb.png);
+    background-image: url(./img/bomb.png);
     background-color: rgb(138, 14, 14);
     background-position: center;
     background-size: calc(0.8vw + 19.1px);
