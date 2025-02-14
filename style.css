@@ -17,7 +17,7 @@
 
 body {
     background-color: var(--purple);
-    padding: calc(0.9vw + 6.7px) calc(1.4vw + 10px);
+    padding: calc(1.1vw + 4.6px) calc(1.4vw + 9.4px);
 }
 
 #loginWrapper {
@@ -33,21 +33,21 @@ body {
 }
 
 #loginWrapper form {
-    width: calc(11.1vw + 160px);
+    width: calc(10.7vw + 165.7px);
     display: flex;
     flex-direction: column;
-    gap: calc(0.4vw + 4.7px);
+    gap: calc(0.9vw + 7.1px);
     align-items: center;
 }
 
 #loginWrapper form h3 {
-    font-size: calc(1.1vw + 14px);
+    font-size: calc(1.2vw + 13.3px);
 }
 
 #loginWrapper form input {
     width: 100%;
-    padding: calc(0.4vw + 4.7px);
-    font-size: calc(0.8vw + 12px);
+    padding: calc(0.4vw + 3.6px);
+    font-size: calc(0.7vw + 13.7px);
     outline: none;
     border-radius: 4px;
     background-color: var(--light-purple);
@@ -55,35 +55,35 @@ body {
 
 .rounded {
     background-color: var(--light-purple);
-    border-radius: calc(0.9vw + 6.7px);
-    padding: calc(1.4vw + 10px);
-    margin-bottom: calc(0.9vw + 6.7px);
+    border-radius: calc(0.9vw + 7.1px);
+    padding: calc(1.3vw + 10.7px);
+    margin-bottom: calc(0.9vw + 7.1px);
 }
 
 header {
     display: flex;
     align-items: center;
-    gap: 0 calc(0.9vw + 6.7px);
+    gap: 0 calc(1.1vw + 4.6px);
 }
 
 h1 {
     font-weight: bold;
-    font-size: calc(1.7vw + 12px);
+    font-size: calc(1.8vw + 10.3px);
 }
 
 .logo {
-    width: calc(2.8vw + 40px);
-    height: calc(2.8vw + 40px);
+    width: calc(3.6vw + 28.6px);
+    height: calc(3.6vw + 28.6px);
 }
 
 .rounded span {
-    font-size: calc(0.7vw + 5.3px);
+    font-size: calc(0.8vw + 4.1px);
 }
 
 .main {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(0.9vw + 6.7px);
+    gap: calc(1.1vw + 4.6px);
 }
 
 .gameArea {
@@ -101,16 +101,16 @@ h1 {
 .gameField {
     display: grid;
     grid-template-columns: repeat(10,1fr);
-    gap: calc(0.2vw + 3.3px);
+    gap: calc(0.2vw + 3.4px);
 }
 
 .field {
-    width: calc(0.4vw + 24.7px);
-    height: calc(0.4vw + 24.7px);
+    width: calc(0.7vw + 19.7px);
+    height: calc(0.7vw + 19.7px);
     border-radius: 4px;
     background-color: var(--purple);
     cursor: pointer;
-    font-size: calc(1.1vw + 8px);
+    font-size: calc(1.1vw + 8.6px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,27 +128,27 @@ h1 {
 }
 
 .gameSetting h2 {
-    font-size: calc(1.1vw + 10px);
+    font-size: calc(1.1vw + 10.6px);
     text-align: center;
-    margin-bottom: calc(1.4vw + 10px);
+    margin-bottom: calc(1.4vw + 9.4px);
 }
 
 .score {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(0.3vw + 6px) calc(0.9vw + 6.7px);
-    margin-bottom: 20px;
+    gap: calc(0.3vw + 6.1px) calc(0.9vw + 7.1px);
+    margin-bottom: calc(0.9vw + 7.1px);
 }
 
 .point {
-    flex-basis: calc(4.6vw + 83.3px);
+    flex-basis: calc(5.4vw + 72.9px);
     background-color: var(--purple);
-    padding: calc(0.7vw + 5.3px) calc(0.9vw + 6.7px);
+    padding: calc(0.8vw + 4.4px) calc(0.9vw + 7.1px);
     flex-grow: 1;
     text-align: center;
-    border-radius: calc(1.3vw + 9.3px);
+    border-radius: calc(1.3vw + 10px);
     cursor: pointer;
-    font-size: calc(0.7vw + 13.3px);
+    font-size: calc(1vw + 9.9px);
 }
 
 .point.active {
@@ -157,19 +157,18 @@ h1 {
 
 #gameBtn {
     width: 100%;
-    padding: calc(0.9vw + 6.7px);
+    padding: calc(1.1vw + 4.6px);
     background-color: var(--green);
-    border-radius: calc(1.7vw + 8px);
+    border-radius: calc(1.7vw + 7.6px);
     border: 0;
     cursor: pointer;
-    font-size: calc(0.9vw + 10.7px);
+    font-size: calc(1vw + 9.9px);
 }
 
 .field.bomb {
-    background-image: url(./img/bomb.png);
+    background-image: url(/img//bomb.png);
     background-color: rgb(138, 14, 14);
     background-position: center;
-    background-size: calc(0.6vw + 22px);
-    background-repeat: no-repeat;
-    
+    background-size: calc(0.8vw + 19.1px);
+    background-repeat: no-repeat; 
 }
